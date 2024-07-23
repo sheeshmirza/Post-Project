@@ -1,0 +1,95 @@
+{
+  "info": {
+    "name": "Post API Collection",
+    "description": "Collection of API endpoints for managing posts and tags",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Add Post",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "multipart/form-data"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "title",
+              "type": "text",
+              "value": "Sample Title"
+            },
+            {
+              "key": "desc",
+              "type": "text",
+              "value": "Sample Description"
+            },
+            {
+              "key": "tags",
+              "type": "text",
+              "value": "[\"tag1\", \"tag2\"]"
+            },
+            {
+              "key": "image",
+              "type": "file",
+              "src": ""
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/posts",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["posts"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Posts",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/posts?sortBy=createdAt&order=desc&skip=0&limit=10&keyword=&tag=",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["posts"],
+          "query": [
+            {
+              "key": "sortBy",
+              "value": "createdAt"
+            },
+            {
+              "key": "order",
+              "value": "desc"
+            },
+            {
+              "key": "skip",
+              "value": "0"
+            },
+            {
+              "key": "limit",
+              "value": "10"
+            },
+            {
+              "key": "keyword",
+              "value": ""
+            },
+            {
+              "key": "tag",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
